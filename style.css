@@ -1,25 +1,33 @@
 /* ====== RESET DASAR ====== */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa;
-  color: #212529;
+  background-color: #000; /* latar belakang hitam */
+  color: #f8f9fa;
   min-height: 100vh;
+  margin: 0;
 }
 
 /* ====== NAVBAR ====== */
 .navbar {
-  border-bottom: 1px solid #dee2e6;
+  background-color: #0d6efd !important; /* biru di atas */
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: 600;
 }
 
 .navbar .nav-link {
-  color: #555;
+  color: #fff !important;
   margin-left: 10px;
   transition: all 0.3s ease;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-  color: #0d6efd;
+  color: #ffc107 !important; /* kuning lembut saat hover */
   font-weight: 600;
 }
 
@@ -27,8 +35,9 @@ body {
 .card {
   border: none;
   border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: #fff; /* tetap putih agar form jelas */
+  color: #212529;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
 .card-body {
@@ -44,12 +53,15 @@ h4 {
 /* ====== FORM ELEMENTS ====== */
 .form-label {
   font-weight: 500;
+  color: #212529;
 }
 
 .form-control,
 .form-select {
   border-radius: 10px;
   padding: 10px 14px;
+  background-color: #fff;
+  color: #212529;
   border: 1px solid #ced4da;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -60,6 +72,7 @@ h4 {
   box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
 }
 
+/* ====== BUTTONS ====== */
 .btn {
   border-radius: 10px;
   padding: 10px;
@@ -70,26 +83,32 @@ h4 {
 .table {
   border-radius: 10px;
   overflow: hidden;
+  background-color: #fff; /* tabel putih */
+  color: #212529;
 }
 
 .table th {
-  background-color: #f1f3f5;
-  color: #495057;
+  background-color: #0d6efd; /* header tabel biru */
+  color: white;
+  white-space: nowrap;
 }
 
 .table td {
   background-color: #fff;
+  color: #212529;
   vertical-align: middle;
 }
 
 .table tr:hover td {
-  background-color: #f8f9fa;
+  background-color: #f1f3f5;
 }
 
 /* ====== MODAL STYLE ====== */
 .modal-content {
   border-radius: 15px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #212529;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
 }
 
 .modal-header {
@@ -103,12 +122,37 @@ h4 {
   font-weight: 600;
 }
 
-/* ====== RESPONSIVE ====== */
+/* ====== RESPONSIVE (untuk HP/tablet) ====== */
 @media (max-width: 768px) {
   .card-body {
-    padding: 1.5rem;
+    padding: 1rem;
   }
+
   .navbar .nav-link {
     font-size: 14px;
+    display: block;
+    margin: 5px 0;
+  }
+
+  /* ✅ Perkecil tabel dan tombol di HP */
+  .table th, .table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  /* ✅ Pastikan tabel bisa discroll horizontal */
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  /* Tambah jarak agar tidak mentok di layar */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
